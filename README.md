@@ -157,3 +157,7 @@ This ran for several minutes and produced 1,019,028 passwords.
 So it is highly recommended when running ```-g``` with a lot of password componentes using ```-q``` to limit the permutations. 3 is a good number to use.
 
 
+# Adding transformations
+
+You can add your own transformers by adding a class in ```rules.py``` that conforms to the shape of the other classes represented. And then adding this class and the arguments the its init function takes in ```transformers.py```.
+
