@@ -16,7 +16,7 @@ Also, the passwords will be sorted by either levenshtein distance or length. If 
 
 If you run it with something like:
 
-```python3 main.py -g foo bar baz bleurgh blast```
+```python3 nomicon.py -g foo bar baz bleurgh blast```
 
 It will give you back all permutations from one word to the length of the arguments.
 It will also add in case inversion, all caps, and title case for each portion. You will also get every combination possible with those as well.
@@ -27,7 +27,7 @@ Check out the output in ```examples/foo-bar-baz-bleurgh-blast_g_12335.txt```
 
 If you run it with something like:
 
-```python3 main.py -saved password```
+```python3 nomicon.py -saved password```
 
 It will give you back the password ('password' in this case) with the following changes:
 
@@ -41,7 +41,7 @@ Check out the output in ```exapmles/password_saved_29.txt```
 
 It does all of these separately and it generated 29 passwords. To start mixing these together you can add the ```-m``` flag as many times as necessary. 
 
-```python3 main.py -msaved password```
+```python3 nomicon.py -msaved password```
 
 Check out the output in ```examples/password_msaved_564.txt```
 
@@ -49,7 +49,7 @@ You now get two levels of mixing based on the previous passwords transformed. So
 
 You can also mix again by adding an additional ```-m``` flag.
 
-```python3 main.py -mmsaved password```
+```python3 nomicon.py -mmsaved password```
 
 Checkout the output in ```examples/password_mmsaved_1021.txt```
 
@@ -61,7 +61,7 @@ Again, some passwords are much more likely to be helpful than others ```p4$$word
 
 If you run it with something like:
 
-```python3 main.py -gasv foo bar baz```
+```python3 nomicon.py -gasv foo bar baz```
 
 Check out the output in ```examples/foo-bar-baz_gasv_2436.txt```
 
@@ -70,12 +70,12 @@ You will also then mutate all of those passwords with the "-a", "-s", and "-v" f
 
 # Options
 
-```python3 main.py``` run without any parameters or arguments will show you usage information.
+```python3 nomicon.py``` run without any parameters or arguments will show you usage information.
 
 ```
         Welcome to Mutator v.1.0!
         Take a known password and transform it using common methods.
-        python3 main.py [-mcaves] [password]
+        python3 nomicon.py [-mcaves] [password]
 
         Options
         
@@ -133,9 +133,9 @@ You will also then mutate all of those passwords with the "-a", "-s", and "-v" f
                 with those components but only go up to combinations of 3, whereas leaving off
                 "-q 3" would go up to permutations that are all 5 components long.
       Examples:
-      python3 main.py -mcaves password
-      python3 main.py -g part1 part2 part3
-      python3 main.py -gq 3 foo bar baz blargh blam bling
+      python3 nomicon.py -mcaves password
+      python3 nomicon.py -g part1 part2 part3
+      python3 nomicon.py -gq 3 foo bar baz blargh blam bling
 ```
 
 # More Exmaples.
@@ -143,15 +143,15 @@ You will also then mutate all of those passwords with the "-a", "-s", and "-v" f
 All of these can be found in the examples so you can see how they work.
 
 This will limit the permutations to lengths of 3 components. 1,055 passwords generated.
-```python3 main.py -gq 3 foo bar baz bleurgh blast```
+```python3 nomicon.py -gq 3 foo bar baz bleurgh blast```
 
 
 This will use all permutations from 1 up to all 5 components. 12,335 passwords generated.
-```python3 main.py -g foo bar baz bleurgh blast```
+```python3 nomicon.py -g foo bar baz bleurgh blast```
 
 Experiment with the options and see which ones work best for you. Try mixing several times. And be aware that the size can grow exponentially depending on the components, password, and options. For example:
 
-```python3 main.py -gsaved foo bar baz bleurgh blast```
+```python3 nomicon.py -gsaved foo bar baz bleurgh blast```
 This ran for several minutes and produced 1,019,028 passwords.
 
 So it is highly recommended when running ```-g``` with a lot of password componentes using ```-q``` to limit the permutations. 3 is a good number to use.

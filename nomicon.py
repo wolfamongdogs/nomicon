@@ -52,7 +52,7 @@ class Mutator(Arguments):
         print("""
         Welcome to Mutator v.1.0!
         Take a known password and transform it using common methods.
-        python3 main.py [-mcaves] [password]
+        python3 nomicon.py [-mcaves] [password]
 
         Options
         """)
@@ -74,9 +74,9 @@ class Mutator(Arguments):
                 "-q 3" would go up to permutations that are all 5 components long.
 
       Examples:
-      python3 main.py -mcaves password
-      python3 main.py -g part1 part2 part3
-      python3 main.py -gq 3 foo bar baz blargh blam bling
+      python3 nomicon.py -mcaves password
+      python3 nomicon.py -g part1 part2 part3
+      python3 nomicon.py -gq 3 foo bar baz blargh blam bling
       """)
 
     def mutate(self, pwd=None):
