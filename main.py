@@ -68,6 +68,11 @@ class Mutator(Arguments):
                 This can be portions of a password that stick out as separate things.
                 It can also be important information about the target.
 
+        -q      This can be used with -g to limit the permutations of password components.
+                For example "-gq 3 foo bar baz bleurgh blast" would return passwords generated
+                with those components but only go up to combinations of 3, whereas leaving off
+                "-q 3" would go up to permutations that are all 5 components long.
+
       Examples:
       python3 main.py -mcaves password
       python3 main.py -g part1 part2 part3
