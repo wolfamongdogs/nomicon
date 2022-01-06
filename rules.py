@@ -246,7 +246,18 @@ class SToDollarSignChanger(RuleGenerator):
     def description(self):
         return ("""
         -s      This changes out all s and S characters with dollar signs
-                It covers all combinationso f original s/S and $
+                It covers all combinations of original s/S and $
+        """)
+
+
+class IToExclamationPointChanger(RuleGenerator):
+
+    flag = "-h"
+
+    def description(self):
+        return ("""
+        -h      This changes out all i and I characters with exclamation points
+                It covers all combinations of original i/I and !
         """)
 
 
